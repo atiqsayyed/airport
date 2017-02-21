@@ -1,0 +1,24 @@
+@import model.SurfaceReport
+@(title:String, results: List[SurfaceReport])
+
+@main("Search") {
+<div class="row">
+    <div class="col-md-6">
+        <h4 id="report-title">@(title)</h4>
+        <table class="table table-bordered" id="airports" cellspacing="0" width="100%">
+            <thead>
+            <tr>
+                <th>Country</th>
+                <th>Surface</th>
+            </tr>
+            </thead>
+            @for(result <- results){
+            <tr>
+                <td>@(result.country.name)</td>
+                <td>@(result.surface)</td>
+            </tr>
+            }
+        </table>
+    </div>
+</div>
+}

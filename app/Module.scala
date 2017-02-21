@@ -1,5 +1,5 @@
 import com.google.inject.AbstractModule
-import resolver.{MySqlSearchResolver, SearchResolver}
+import resolver.{MySqlResolver, Resolver}
 
 /**
  * This class is a Guice module that tells Guice how to bind several
@@ -16,7 +16,7 @@ class Module extends AbstractModule {
   override def configure() = {
 
     // Set AtomicCounter as the implementation for Counter.
-    bind(classOf[SearchResolver]).to(classOf[MySqlSearchResolver])
+    bind(classOf[Resolver]).to(classOf[MySqlResolver])
   }
 
 }

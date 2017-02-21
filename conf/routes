@@ -8,3 +8,12 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 GET     /search                     controllers.SearchController.searchByCountry(country: String)
 
 GET     /                           controllers.HomeController.index()
+
+GET    /reports/highestNoOfAirports        controllers.ReportsController.getCountriesWithHighestNoOfAirports
+
+GET    /reports/lowestNoOfAirports        controllers.ReportsController.getCountriesWithLowestNoOfAirports
+
+GET    /reports/surfacesPerCountry        controllers.ReportsController.getSurfacePerCountry
+
+GET    /reports/commonRunwayIdents        controllers.ReportsController.getCommonRunwayIdents
+

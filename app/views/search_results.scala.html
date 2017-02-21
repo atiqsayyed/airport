@@ -1,21 +1,9 @@
 @import model.SearchResult
 @(results: List[SearchResult])
-<!DOCTYPE html>
 
-<html>
-<head>
-    <title>Airport Management</title>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    </head>
-    <body>
-    <div class="container">
-        <h1>Search for Airports</h1>
-        <input type="text" id="countryName" placeholder="Country Name or Country Code"/>
-        <button onclick="search()">Search</button>
-
+@main("Search") {
     <div class="table-responsive">
-        <table class="table">
+        <table class="table table-bordered" id="airports" cellspacing="0" width="100%">
             <thead>
                 <tr><th>Country Name</th><th>Country Code</th><th>Airport Name</th><th>Airport Type</th><th>Runway Surface</th><th> Runway Lighted</th></tr>
             </thead>
@@ -34,14 +22,4 @@
         </table>
 
         </div>
-    </div>
-</body>
-<script>
-    function search() {
-        var input = document.getElementById("countryName")
-        var searchTerm = input.value
-        window.location.href = "/search?country="+searchTerm
-    }
-</script>
-
-</html>
+}

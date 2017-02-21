@@ -1,0 +1,42 @@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="container-fluid">
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Report
+                <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a href="/reports/highestNoOfAirports">Countries with highest no of airports</a></li>
+                <li><a href="/reports/lowestNoOfAirports">Countries with lowest no of aiports</a></li>
+                <li><a href="/reports/surfacesPerCountry">Surfaces per country</a></li>
+                <li><a href="/reports/commonRunwayIdents">Most Common Runway identifications</a></li>
+            </ul>
+        </div>
+    </div>
+    <h1>Search for Airports</h1>
+    <input type="text" id="countryName" placeholder="Country Name or Country Code"/>
+    <button onclick="search()">Search</button>
+
+    @content
+</div>
+</body>
+<script>
+    function search() {
+        var input = document.getElementById("countryName")
+        var searchTerm = input.value
+        window.location.href = "/search?country="+searchTerm
+    }
+
+</script>
+
+</html>

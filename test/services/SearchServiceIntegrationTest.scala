@@ -3,13 +3,13 @@ package services
 import model.{Airport, Country, Runway, SearchResult}
 import org.scalatest.concurrent.{IntegrationPatience, ScalaFutures}
 import org.scalatest.{FunSpec, Matchers}
-import resolver.MySqlSearchResolver
+import resolver.MySqlResolver
 import utils.TestInjector
 
 class SearchServiceIntegrationTest extends FunSpec with Matchers with TestInjector with ScalaFutures with IntegrationPatience {
 
   describe("Search Service") {
-    val searchResolver = getInjector.instanceOf[MySqlSearchResolver]
+    val searchResolver = getInjector.instanceOf[MySqlResolver]
     val service = new SearchService(searchResolver)
 
     it("should get search results if searched by country name") {
