@@ -29,7 +29,7 @@ object SqlQueries {
          select COUNTRIES.NAME as CountryName,AIRPORT.ISO_COUNTRY as AirportCountry, COUNT(AIRPORT.ISO_COUNTRY) as count from AIRPORT
          JOIN COUNTRIES ON COUNTRIES.`CODE`=AIRPORT.`ISO_COUNTRY`
          GROUP BY AIRPORT.`ISO_COUNTRY`, COUNTRIES.NAME
-         order by count #$sortBy
+         order by count #$sortBy, CountryName
          LIMIT 10;
     """.as[CountryReport]
   }
