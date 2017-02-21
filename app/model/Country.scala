@@ -1,5 +1,3 @@
 package model
 
-class Country {
-
-}
+case class Country(name: String, code: String)

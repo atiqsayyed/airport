@@ -1,3 +1,3 @@
 package model
 
-case class Airport()
+case class Airport(name:String, _type:String)

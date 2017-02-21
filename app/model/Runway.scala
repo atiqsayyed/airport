@@ -1,5 +1,3 @@
 package model
 
-class Runway {
-
-}
+case class Runway(surface:String, lighted:Int)

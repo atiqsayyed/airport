@@ -1,20 +1,22 @@
-@*
- * This template takes a single argument, a String containing a
- * message to display.
- *@
-@(message: String)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Airport</title>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+    </head>
+    <body>
+    <div class="container">
+        <h1>Search for Airports</h1>
+        <input type="text" id="countryName" placeholder="Country Name or Code"/>
+        <button onclick="search()" class=".btn">Search</button>
+        </div>
+    </body>
+   <script>
+    function search() {
+        var input = document.getElementById("countryName")
+        var searchTerm = input.value
+        window.location.href = "/search?country="+searchTerm
+    }
+</script>
 
-@*
- * Call the `main` template with two arguments. The first
- * argument is a `String` with the title of the page, the second
- * argument is an `Html` object containing the body of the page.
- *@
-@main("Welcome to Play") {
-
-    @*
-     * Get an `Html` object by calling the built-in Play welcome
-     * template and passing a `String` message.
-     *@
-    @play20.welcome(message, style = "Scala")
-
-}
+</html>
